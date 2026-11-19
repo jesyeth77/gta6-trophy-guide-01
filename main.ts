@@ -1,8 +1,8 @@
-// Leonida Trophy Guide — a gta6-trophy-guide-01 entry (Node 22, standard library only).
+// Leonida Trophy Guide v2 — a gta6-trophy-guide-01 entry (Node 22, standard library only).
 // The guide itself is app/: plain static files a browser opens at app/index.html
 // (one ES module, one stylesheet, and app/data/trophies.json with the 55 official
 // trophies and our own-word guides). It works offline: it loads nothing over the
-// network, and progress lives in the browser's localStorage.
+// network, and progress and notes live in the browser's localStorage.
 // This program hands the guide in: it copies app/ and screenshots/ from beside
 // this file to /output and writes /output/dossier.json with the vendored make.fun
 // library. vendor/makefun-frontend.ts is the kit's copy, unchanged: the scorer

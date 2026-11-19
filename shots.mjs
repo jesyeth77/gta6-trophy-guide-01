@@ -1,7 +1,7 @@
-// Screenshot script for the Leonida Trophy Guide (run once, by hand):
-// serves app/ on :8091, seeds 13 of 55 trophies as earned, and takes 4 JPEGs
-// of the app's own code at 1280x800 — checklist with a guide open, roadmap,
-// missables, and a silver-filtered view. Not part of the app.
+// Screenshot script for the Leonida Trophy Guide v2 (run once, by hand):
+// serves app/ on :8091, seeds 13 of 55 trophies as earned (v2 storage keys),
+// and takes 4 JPEGs of the app's own code at 1280x800 — checklist with a guide
+// open, roadmap, missables, and a silver-filtered view. Not part of the app.
 import { chromium } from '/home/hatch/workspace/octra/sesi-permanen/node_modules/playwright-core/index.mjs';
 import { spawn } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
@@ -30,8 +30,8 @@ const shots = [
 for (const s of shots) {
   const page = await browser.newPage({ viewport: { width: 1280, height: 800 } });
   await page.addInitScript((names) => {
-    localStorage.setItem('leonida-trophy-guide-v1', JSON.stringify(names));
-    localStorage.setItem('leonida-trophy-guide-spoilers', '0');
+    localStorage.setItem('leonida-trophy-guide-v2', JSON.stringify(names));
+    localStorage.setItem('leonida-trophy-guide-v2-spoilers', '0');
   }, EARNED);
   await page.goto(s.url, { waitUntil: 'networkidle' });
   if (s.grade) {
